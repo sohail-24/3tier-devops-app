@@ -14,7 +14,7 @@ services:
       - app-network
 
   backend:
-    image: sohail/backend:1.0
+    image: sohail/backend:2.0
     container_name: backend
     environment:
       PORT: 5001
