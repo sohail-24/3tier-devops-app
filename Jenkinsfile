@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build Images') {
             steps {
-                sh 'docker-compose build'
+                sh 'docker-compose build --no-cache'
             }
         }
 
