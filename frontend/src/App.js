@@ -97,7 +97,7 @@ function App() {
   return (
     <div style={styles.page}>
       <header style={styles.hero}>
-        <h1>🚀 7-Tier React Application</h1>
+        <h1>🚀 6-Tier React Application</h1>
         <p>Frontend • Backend • Database</p>
       </header>
 
