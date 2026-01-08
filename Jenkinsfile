@@ -8,14 +8,15 @@ pipeline {
             }
         }
 
-        stage('Build Docker Images') {
+        stage('Build Images') {
             steps {
                 sh 'docker-compose build'
             }
         }
 
-        stage('Deploy Application') {
+        stage('Deploy') {
             steps {
+                sh 'docker-compose down'
                 sh 'docker-compose up -d'
             }
         }
