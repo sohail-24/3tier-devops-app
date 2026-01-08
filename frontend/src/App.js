@@ -97,7 +97,7 @@ function App() {
   return (
     <div style={styles.page}>
       <header style={styles.hero}>
-        <h1>🚀 3-Tier React Application</h1>
+        <h1>🚀 7-Tier React Application</h1>
         <p>Frontend • Backend • Database</p>
       </header>
 
@@ -153,7 +153,7 @@ function App() {
       )}
 
       <footer style={styles.footer}>
-        <p>© 2026 • DevOps 3-Tier Project</p>
+        <p>© 2026 • Sohail DevOps 3-Tier Project</p>
       </footer>
     </div>
   );
