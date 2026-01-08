@@ -87,10 +87,10 @@ const HOST = "0.0.0.0";
 // ===============================
 // DB INIT + SERVER START
 // ===============================
-sequelize
-  .sync()
-  .then(() => console.log("✅ Database synced"))
-  .catch((err) => console.error("❌ Database error", err));
+sequelize.sync()
+  .then(() => console.log("DB synced"))
+  .catch(err => console.error("Sync error:", err));
+
 
 app.listen(PORT, HOST, () => {
   console.log(`✅ Backend running on http://${HOST}:${PORT}`);
