@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_DB: appdb
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: password123
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  backend:
+    image: sohail/backend:1.0
+    container_name: backend
+    environment:
+      PORT: 5001
+      DB_HOST: db
+      DB_NAME: appdb
+      DB_USER: appuser
+      DB_PASSWORD: password123
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  frontend:
+    image: sohail/frontend:2.1
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
+
